@@ -4,7 +4,7 @@ import re
 import urllib.parse
 
 def load_template(template_path):
-    """加载 README 模板文件"""
+    """Load README template file"""
     with open(template_path, 'r', encoding='utf-8') as f:
         return f.read()
 
@@ -56,22 +56,22 @@ def process_skills(skills_text):
     return " ".join([create_badge(skill) for skill in skills])
 
 def create_project_fields(col, project_num):
-    """创建单个项目的输入字段"""
-    st.subheader(f"项目 {project_num}")
+    """Create input fields for a single project"""
+    st.subheader(f"Project {project_num}")
     project_data = {
-        f'project_{project_num}_name': st.text_input(f"项目 {project_num} 名称", value="My Awesome Project", key=f"name_{project_num}"),
-        f'project_{project_num}_link': st.text_input(f"项目 {project_num} 链接", value="#", key=f"link_{project_num}"),
-        f'project_{project_num}_image': st.text_input(f"项目 {project_num} 图片", value="/path/to/project.png", key=f"image_{project_num}"),
-        f'project_{project_num}_github': st.text_input(f"项目 {project_num} GitHub", value="#", key=f"github_{project_num}"),
-        f'project_{project_num}_live': st.text_input(f"项目 {project_num} 演示链接", value="#", key=f"live_{project_num}"),
-        f'project_{project_num}_point_1': st.text_input(f"项目 {project_num} 要点 1", value="Feature 1", key=f"point1_{project_num}"),
-        f'project_{project_num}_point_2': st.text_input(f"项目 {project_num} 要点 2", value="Feature 2", key=f"point2_{project_num}"),
-        f'project_{project_num}_point_3': st.text_input(f"项目 {project_num} 要点 3", value="Feature 3", key=f"point3_{project_num}")
+        f'project_{project_num}_name': st.text_input(f"Project {project_num} Name", value="My Awesome Project", key=f"name_{project_num}"),
+        f'project_{project_num}_link': st.text_input(f"Project {project_num} Link", value="#", key=f"link_{project_num}"),
+        f'project_{project_num}_image': st.text_input(f"Project {project_num} Image URL", value="/path/to/project.png", key=f"image_{project_num}"),
+        f'project_{project_num}_github': st.text_input(f"Project {project_num} GitHub Repository", value="#", key=f"github_{project_num}"),
+        f'project_{project_num}_live': st.text_input(f"Project {project_num} Live Demo", value="#", key=f"live_{project_num}"),
+        f'project_{project_num}_point_1': st.text_input(f"Project {project_num} Feature 1", value="Key feature or achievement", key=f"point1_{project_num}"),
+        f'project_{project_num}_point_2': st.text_input(f"Project {project_num} Feature 2", value="Important functionality", key=f"point2_{project_num}"),
+        f'project_{project_num}_point_3': st.text_input(f"Project {project_num} Feature 3", value="Technical highlight", key=f"point3_{project_num}")
     }
     return project_data
 
 def create_project_html(project_num):
-    """生成单个项目的 HTML 模板"""
+    """Generate HTML template for a single project"""
     return f'''<td width="50%">
 <h3 align="center">{{{{project_{project_num}_name}}}}</h3>
 <div align="center">  
@@ -97,7 +97,7 @@ def create_project_html(project_num):
 </td>'''
 
 def generate_projects_section(num_projects):
-    """生成项目展示区域的 HTML"""
+    """Generate HTML for the projects showcase section"""
     projects_html = []
     for i in range(0, num_projects, 2):
         row_html = f'''<tr>
@@ -115,64 +115,113 @@ def main():
     )
     
     st.title("GitHub README Profile Generator")
-    st.markdown("### 生成你的个性化 GitHub Profile README")
+    st.markdown("### Create Your Personalized GitHub Profile README")
+    
+    # Add introduction and tutorial
+    st.info("""
+    👋 Welcome! This tool helps you create an awesome GitHub profile README.md file in a few simple steps.
+    
+    **How to use this generator:**
+    1. Fill in the forms in each section on the left
+    2. Preview your README in real-time on the right
+    3. When satisfied, click 'Copy Content' and paste it into your GitHub profile repository
+    
+    **To create your GitHub profile README:**
+    1. Create a new repository with the same name as your GitHub username
+    2. Initialize it with a README.md file
+    3. Paste the generated content and commit changes
+    """)
 
-    # 加载默认模板
+    # Load default template
     template_path = Path("README_template.md")
     template_content = load_template(template_path)
     
-    # 创建两列布局
+    # Create two-column layout
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.subheader("基本信息")
+        st.subheader("Basic Information")
+        st.markdown("""
+        This section forms the header of your profile. Make it personal and engaging!
+        - **Name**: Your full name or preferred display name
+        - **Bio**: A brief introduction about yourself (1-2 sentences)
+        - **GitHub Username**: Your GitHub handle (used for generating links)
+        """)
         
-        # 基本信息表单
-        full_name = st.text_input("姓名", value="Chan Meng")
-        bio = st.text_input("个人简介", value="A minimalist")
-        github_username = st.text_input("GitHub 用户名", value="ChanMeng666")
+        # Basic information form
+        full_name = st.text_input("Full Name", value="Chan Meng")
+        bio = st.text_input("Bio", value="A passionate developer exploring the digital frontier")
+        github_username = st.text_input("GitHub Username", value="ChanMeng666")
         
-        # 社交链接
-        st.subheader("社交链接")
-        portfolio_link = st.text_input("作品集链接", value="https://chanmeng.live/")
-        linkedin_link = st.text_input("LinkedIn 链接", value="https://www.linkedin.com/in/chanmeng666/")
+        # Social Links
+        st.subheader("Social Links")
+        st.markdown("""
+        Connect with visitors through your professional networks.
+        Add your portfolio and LinkedIn URLs to showcase your work and experience.
+        """)
+        portfolio_link = st.text_input("Portfolio Website", value="https://chanmeng.live/")
+        linkedin_link = st.text_input("LinkedIn Profile", value="https://www.linkedin.com/in/chanmeng666/")
         
-        # 日常行为
-        st.subheader("日常行为")
-        daily_routine_1 = st.text_input("日常行为 1", value="code")
-        daily_routine_2 = st.text_input("日常行 2", value="eat")
-        daily_routine_3 = st.text_input("日常行为 3", value="sleep")
-        daily_routine_4 = st.text_input("日常行为 4", value="repeat")
+        # Daily Routine
+        st.subheader("Daily Routine")
+        st.markdown("""
+        Share your daily activities in a fun way! These will be displayed as an animated cycle.
+        Example: code → learn → create → repeat
+        """)
+        daily_routine_1 = st.text_input("Activity 1", value="code")
+        daily_routine_2 = st.text_input("Activity 2", value="learn")
+        daily_routine_3 = st.text_input("Activity 3", value="create")
+        daily_routine_4 = st.text_input("Activity 4", value="repeat")
         
-        # 项目信息
-        st.subheader("项目展示")
-        num_projects = st.number_input("项目数量", min_value=1, max_value=10, value=2)
+        # Projects Section
+        st.subheader("Featured Projects")
+        st.markdown("""
+        Showcase your best work! For each project, you'll need:
+        - Project name
+        - Project link (repository or demo)
+        - Screenshot/preview image
+        - GitHub repository link
+        - Live demo link
+        - Key features/highlights (3 points)
+        """)
+        num_projects = st.number_input("Number of Projects", min_value=1, max_value=10, value=2)
         
-        # 存储所有项目数据
+        # Store project data
         all_project_data = {}
         for i in range(1, num_projects + 1):
             project_data = create_project_fields(col1, i)
             all_project_data.update(project_data)
         
-        # 技能徽章
-        st.subheader("技能栈")
-        core_skills = st.text_area("核心技能 (用逗号分隔)", 
+        # Skills Section
+        st.subheader("Skills & Technologies")
+        st.markdown("""
+        List your technical skills separated by commas. They'll be converted into beautiful badges!
+        Example: Python, JavaScript, React, Docker
+        
+        Tip: Group similar skills together for better organization.
+        """)
+        core_skills = st.text_area("Core Skills", 
             value="React,Python,TypeScript,Machine Learning")
-        frontend_skills = st.text_area("前端技能 (用逗号分隔)", 
+        frontend_skills = st.text_area("Frontend Skills", 
             value="HTML5,CSS3,JavaScript,React Native")
-        backend_skills = st.text_area("后端技能 (用逗号分隔)", 
+        backend_skills = st.text_area("Backend Skills", 
             value="Node.js,MySQL,MongoDB")
 
-        # 生成徽章
+        # Generate badges
         core_skills_badges = process_skills(core_skills)
         frontend_skills_badges = process_skills(frontend_skills)
         backend_skills_badges = process_skills(backend_skills)
 
-        # 其他信息
-        st.subheader("其他信息")
-        footer_text = st.text_area("页脚文本", value="Thanks for visiting my GitHub profile! Feel free to connect or check out my projects.")
+        # Additional Information
+        st.subheader("Footer Message")
+        st.markdown("""
+        Add a personal touch with a closing message to your profile visitors.
+        This appears at the bottom of your profile README.
+        """)
+        footer_text = st.text_area("Footer Message", 
+            value="Thanks for visiting my GitHub profile! Feel free to connect or check out my projects.")
 
-        # 更新变量字典，加入项目数据
+        # Update variable dictionary, add project data
         variables = {
             'full_name': full_name or '',
             'bio': bio or '',
@@ -187,10 +236,10 @@ def main():
             'frontend_skills_badges': frontend_skills_badges,
             'backend_skills_badges': backend_skills_badges,
             'footer_text': footer_text,
-            **all_project_data  # 添加所有项目数据
+            **all_project_data  # Add all project data
         }
 
-        # 动态生成项目部分的模板内容
+        # Dynamic generate project section template content
         template_content = template_content.replace(
             "<!-- Featured Projects Section -->",
             f'''<!-- Featured Projects Section -->
@@ -199,16 +248,25 @@ def main():
 </table>'''
         )
 
-        # 生成预览内容
+        # Generate preview content
         preview_content = replace_template_variables(template_content, variables)
 
     with col2:
-        st.subheader("预览")
+        st.subheader("Live Preview")
+        st.markdown("""
+        See how your README looks in real-time. 
+        When you're ready, click 'Copy Content' below to get the markdown code.
+        """)
         st.markdown(preview_content, unsafe_allow_html=True)
         
-        if st.button("复制全部内容"):
+        if st.button("Copy Content"):
             st.code(preview_content, language="markdown")
-            st.success("内容已复制到剪贴板!")
+            st.success("""
+            Content copied! To update your GitHub profile:
+            1. Go to your profile repository (username/username)
+            2. Edit README.md
+            3. Paste this content and commit changes
+            """)
 
 if __name__ == "__main__":
     main()
