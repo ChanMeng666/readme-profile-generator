@@ -8,7 +8,8 @@
  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/>
 </div>
 
-[Add a screenshot/GIF of your application here]
+![screencapture-huggingface-co-spaces-ChanMeng666-readme-profile-generator-2024-12-13-19_56_01](https://github.com/user-attachments/assets/aef0e3a6-466d-4a67-8aec-362789015a1d)
+
 
 # ⭐ Features
 Create your perfect GitHub Profile README in minutes! Our visual editor makes it easy to craft a professional and eye-catching profile that stands out.
