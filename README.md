@@ -1,5 +1,5 @@
 <div align="center">
- <h1>🚀 GitHub Profile README Generator</h1>
+ <h1><img src="public/readme-profile-generator-logo.svg" width="80px"><br/>GitHub Profile README Generator</h1>
  <p>Create stunning GitHub profile READMEs with an interactive visual editor!</p>
 
  <img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg"/>
