@@ -8,6 +8,7 @@
  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/>
 </div>
 
+[![Explore GitHub Profile README Generator](https://gradient-svg-generator.vercel.app/?text=👉+Try+It+Now!+👈&height=40&template=pride-rainbow)](https://huggingface.co/spaces/ChanMeng666/readme-profile-generator)
 
 
 https://github.com/user-attachments/assets/50189ab6-1e69-46e6-9a81-0e8649e1312f
