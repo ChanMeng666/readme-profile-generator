@@ -159,7 +159,7 @@ def main():
         Connect with visitors through your professional networks.
         Add your portfolio and LinkedIn URLs to showcase your work and experience.
         """)
-        portfolio_link = st.text_input("Portfolio Website", value="https://chanmeng.live/")
+        portfolio_link = st.text_input("Portfolio Website", value="https://chanmeng.org/")
         linkedin_link = st.text_input("LinkedIn Profile", value="https://www.linkedin.com/in/chanmeng666/")
         
         # Daily Routine

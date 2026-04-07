@@ -794,7 +794,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - <img src="https://cdn.simpleicons.org/linkedin/0A66C2" width="16" height="16"> LinkedIn: [chanmeng666](https://www.linkedin.com/in/chanmeng666/)
 - <img src="https://cdn.simpleicons.org/github/181717" width="16" height="16"> GitHub: [ChanMeng666](https://github.com/ChanMeng666)
 - <img src="https://cdn.simpleicons.org/gmail/EA4335" width="16" height="16"> Email: [chanmeng.dev@gmail.com](mailto:chanmeng.dev@gmail.com)
-- <img src="https://cdn.simpleicons.org/internetexplorer/0078D4" width="16" height="16"> Website: [chanmeng.live](https://2d-portfolio-eta.vercel.app/)
+- <img src="https://cdn.simpleicons.org/internetexplorer/0078D4" width="16" height="16"> Website: [chanmeng.org](https://chanmeng.org/)
 
 **Project Links:**
 - 🌐 **Live Demo**: [Hugging Face Spaces](https://huggingface.co/spaces/ChanMeng666/readme-profile-generator)
@@ -831,7 +831,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [demo-link]: https://huggingface.co/spaces/ChanMeng666/readme-profile-generator
 [docs]: https://github.com/ChanMeng666/readme-profile-generator/wiki
 [templates]: https://github.com/ChanMeng666/readme-profile-generator/tree/main/templates
-[blog]: https://chanmeng.live/blog
+[blog]: https://chanmeng.org/blog
 
 <!-- GitHub Links -->
 [github-issues-link]: https://github.com/ChanMeng666/readme-profile-generator/issues
