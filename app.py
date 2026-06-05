@@ -113,7 +113,18 @@ def main():
         page_icon="📝",
         layout="wide"
     )
-    
+
+    # Developer brand credit — Chan Meng
+    with st.sidebar:
+        st.image("brand/chan-meng-monkey.png", width=72)
+        st.markdown(
+            "**Built by Chan Meng**  \n"
+            "Need a custom app like this one?  \n"
+            "📧 [chanmeng.dev@gmail.com](mailto:chanmeng.dev@gmail.com)  \n"
+            "💻 [github.com/ChanMeng666](https://github.com/ChanMeng666)"
+        )
+        st.divider()
+
     st.title("GitHub README Profile Generator")
     st.markdown("### Create Your Personalized GitHub Profile README")
     
